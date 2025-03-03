@@ -1,7 +1,7 @@
 # QwikPost
 
 ## Overview
-**QwikPost** is a server-based post and thought-sharing platform where users can register, log in, and share their ideas securely. The platform ensures a smooth and secure user experience using modern web technologies and authentication methods.
+**QwikPost** is a server-based post and thought-sharing platform where users can register, log in, and share their ideas and thoughts. The platform ensures a smooth user experience using modern web technologies and authentication methods.
 
 ## Features
 - **User Authentication**: Secure registration and login using JWT and bcrypt.
@@ -64,6 +64,9 @@ Contributions are welcome! Feel free to fork this repo, create a new branch, and
 
 ## License
 This project is licensed under the MIT License.
+
+## Author
+Developed by **Rajnish Sharma** - Founder & CEO, Rixi Lab.
 
 ---
 **Follow for Updates!** 🚀
