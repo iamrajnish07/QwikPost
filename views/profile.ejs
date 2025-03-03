@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QwikPost | <%= user.name %></title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <section class="bg-gray-50 h-screen dark:bg-gray-900">
+        <div class="flex flex-col justify-center px-6 py-8 mx-auto lg:py-0">
+            <div class="w-full mt-6 bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
+                <div class="p-6 flex" style="justify-content: space-between;">
+                    <h1 class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                        Hello, <%= user.name %> 👋
+                    </h1>
+                    <button class="w-50 justify-end text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"><a href="/logout">Logout</a></button>
+                </div>
+            </div>
+            <div class="flex gap-5 h-[46vh]">
+                <div class="w-1/2 mt-6 bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
+                    <h3 class="text-xl leading-tight tracking-tight text-white px-6 py-4">You can create a new post.</h3>
+                    <form action="/post" method="post">
+                        <textarea class="p-2 w-[88vh] text-white h-48 mx-6 my-0 mb-4 rounded-lg resize-none color bg-gray-700 outline-none" name="content" placeholder="Please share your thoughts..."></textarea>
+                        <input type="submit" class="w-[88vh] rounded-lg mx-6 mb-4 py-2 text-white bg-blue-600 hover:bg-blue-700" value="Create Post">
+                    </form>
+                    <h3 class="text-1xl mt-[34vh] leading-tight tracking-tight text-white text-center px-6 py-4">Copyright © 2025 Design and created by <a href="https://www.linkedin.com/company/rixi-lab/">Rixi Lab</a>. All Rights Reserved.</h3>
+                </div>
+                <div class="mt-[25px] w-[95vh] flex-col overflow-y-scroll overflow-x-hidden overflow-visible h-[80vh] [&::-webkit-scrollbar]:w-2
+                [&::-webkit-scrollbar-track]:bg-gray-100
+                [&::-webkit-scrollbar-thumb]:bg-gray-300
+                dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+                dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 ">
+                    <div class="w-[90vh] bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
+                        <h3 class="text-xl leading-tight tracking-tight text-white px-6 py-2">Your posts</h3>
+                    </div>
+                    <% user.posts.reverse().forEach(function(post){ %>
+                        <div class="w-[90vh] mt-4 bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
+                            <h2 class="text-1xl text-sky-500 leading-tight tracking-tight px-4 mt-4">@<%= user.username %></h2>
+                            <p class="px-4 py-2 text-white text-justify"><%= post.content %></p>
+                            <div class="btns flex gap-4 px-4 mb-2">
+                                <p class="text-white text-1xl"><%= post.likes.length %></p>
+                                <a href="/like/<%= post._id %>" class="text-sky-500"><%= post.likes.indexOf(user._id) === -1 ? "👍Like" : "👎Unlike" %></a>
+                                <button id="openPopupBtn" href="/edit/<%= post._id %>" class="text-yellow-500">✏️Edit</button>
+                                <a href="/delete/<%= post._id %>" class="text-red-500">🗑️Delete</a>
+                            </div>
+                        </div>
+                    <% }) %>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <span class="close-btn" id="closePopupBtn">&times;</span>
+                <h3 class="text-xl leading-tight tracking-tight text-white px-6 py-4">Edit your post.</h3>
+                    <form action="/post" method="post">
+                        <textarea class="p-2 w-[88vh] text-white h-48 mx-6 my-0 mb-4 rounded-lg resize-none color bg-gray-700 outline-none" name="content" placeholder="What's on your mind?"></textarea>
+                        <input type="submit" class="w-[88vh] rounded-lg mx-6 mb-4 py-2 text-white bg-yellow-600 hover:bg-yellow-700" value="Update Post">
+                    </form>
+            </div>
+        </div>
+      <script src="javascripts/script.js"></script>
+</body>
+</html>

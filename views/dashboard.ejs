@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QwikPost Dashboard</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <section class="bg-gray-50 h-screen dark:bg-gray-900">
+        <div class="flex flex-col justify-center px-6 py-8 mx-auto lg:py-0">
+            <div class="w-full mt-6 bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
+                <div class="p-6 flex" style="justify-content: space-between;">
+                    <h1 class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                        QwikPost Dashboard
+                    </h1>
+                    <div>
+                        <button class="w-50 justify-end text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"><a href="/signin">Sign in</a></button>
+                        <button class="w-50 justify-end text-white bg-blue-600 hover:bg-blue-700 focus:ring-4     focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5    text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"><a  href="/login">Log in</a></button>
+                    </div>
+                </div>
+            </div>
+                <div class="gap-5 mt-5 overflow-y-scroll overflow-x-hidden overflow-visible h-[78vh] [&::-webkit-scrollbar]:w-2
+                    [&::-webkit-scrollbar-track]:bg-gray-100
+                    [&::-webkit-scrollbar-thumb]:bg-gray-300
+                    dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+                    dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 ">
+                    <div class="flex-col">
+                        <% post.reverse().forEach(function(post){ %>
+                            <div class="w-[186vh] mb-4 bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
+                                <h2 class="text-1xl text-sky-500 leading-tight tracking-tight px-4 mt-4">@<%= post.user.username %></h2>
+                                <p class="px-4 py-2 text-white text-justify"><%= post.content %></p>
+                                <!-- <div class="btns flex gap-4 px-4 mb-2">
+                                    <p class="text-white text-1xl"><%= post.likes.length %></p>
+                                    <a href="" class="text-blue-500">like</a>
+                                    <button href="" class="text-yellow-500">✏️Edit</button>
+                                    <a href="" class="text-red-500">🗑️Delete</a>
+                                </div> -->
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>   
+                <h3 class="text-1xl leading-tight tracking-tight text-white text-center px-6 py-2">Copyright © 2025 Design and created by <a href="https://www.linkedin.com/company/rixi-lab/">Rixi Lab</a>. All Rights Reserved.</h3>             
+        </div>
+    </section>
+      <script src="javascripts/script.js"></script>
+</body>
+</html>
