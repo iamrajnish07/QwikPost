@@ -8,11 +8,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <section class="bg-gray-50 h-screen dark:bg-gray-900">
+    <section class=" h-screen">
         <div class="flex flex-col justify-center px-6 py-8 mx-auto lg:py-0">
-            <div class="w-full mt-6 bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
+            <div class="w-full mt-6 bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700" style="background-color: #1f2937;">
                 <div class="p-6 flex" style="justify-content: space-between;">
-                    <h1 class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                    <h1 class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white" style="color: white;">
                         QwikPost Dashboard
                     </h1>
                     <div>
@@ -26,9 +26,9 @@
                     [&::-webkit-scrollbar-thumb]:bg-gray-300
                     dark:[&::-webkit-scrollbar-track]:bg-neutral-700
                     dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 ">
-                    <div class="flex-col">
+                    <div class="flex-col" >
                         <% post.reverse().forEach(function(post){ %>
-                            <div class="w-[186vh] mb-4 bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
+                            <div class="QwikPost mb-4 bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700" style="background-color: #1f2937;">
                                 <h2 class="text-1xl text-sky-500 leading-tight tracking-tight px-4 mt-4">@<%= post.user.username %></h2>
                                 <p class="px-4 py-2 text-white text-justify"><%= post.content %></p>
                                 <!-- <div class="btns flex gap-4 px-4 mb-2">
@@ -41,7 +41,7 @@
                         <% }) %>
                     </div>
                 </div>   
-                <h3 class="text-1xl leading-tight tracking-tight text-white text-center px-6 py-2">Copyright © 2025 Design and created by <a href="https://www.linkedin.com/company/rixi-lab/">Rixi Lab</a>. All Rights Reserved.</h3>             
+                <h3 style="font-size: 12px;" class="text-1xl leading-tight tracking-tight text-white text-center px-6 py-2 mt-2">Copyright © 2025 Design and created by <a href="https://www.linkedin.com/company/rixi-lab/">Rixi Lab</a>. All Rights Reserved.</h3>             
         </div>
     </section>
       <script src="javascripts/script.js"></script>

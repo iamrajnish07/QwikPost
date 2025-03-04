@@ -29,3 +29,17 @@
     font-weight: bold;
     cursor: pointer;
 }
+.QwikPost{
+    width: 186vh;
+}
+section{
+    background-color: #111827;
+}
+.shadow{
+    background-color: #1f2937;
+}
+@media screen and (max-width: 600px) {
+    .QwikPost{
+        width: 42vh;
+    }
+}
