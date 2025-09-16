@@ -66,7 +66,7 @@ Contributions are welcome! Feel free to fork this repo, create a new branch, and
 This project is licensed under the MIT License.
 
 ## Author
-Developed by **Rajnish Sharma** - Founder & CEO, Rixi Lab.
+Developed by **Rajnish Sharma**
 
 ---
 **Follow for Updates!** 🚀
